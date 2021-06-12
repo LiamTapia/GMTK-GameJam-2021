@@ -8,15 +8,16 @@ public class CharacterControl : MonoBehaviour
     //public GameObject player;
     public float speed = 5f;
 
-     public float jumpSpeed = 8.0F;
+    public float jumpSpeed = 8.0F;
     public float gravity = 20.0F;
     private Vector3 moveDirection = Vector3.zero;
+    private Animator animator;
 
 
     // Start is called before the first frame update
-    void Start()
+    void Awake()
     {
-        
+        animator = GetComponentInChildren<Animator>();
     }
 
     // Update is called once per frame
@@ -30,6 +31,12 @@ public class CharacterControl : MonoBehaviour
         {
             moveDirection.x = horizontal*speed;
             moveDirection.z = vertical*speed;
+
+            if(horizontal != 0 || vertical !=0){
+                animator.SetBool("isRunning", true);
+            } else{
+                animator.SetBool("isRunning", false);
+            }
             
             if(Input.GetButton("Jump"))
                 moveDirection.y = jumpSpeed;
