@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class CharacterControl : MonoBehaviour
 {
@@ -15,6 +16,7 @@ public class CharacterControl : MonoBehaviour
     private bool enabled;
     private int health = 1;
     private Transform position;
+    public string nextLevel;
 
     // Start is called before the first frame update
     void Awake()
@@ -66,6 +68,13 @@ public class CharacterControl : MonoBehaviour
                 health -= 1;
             }
         }
-        
+        if(other.CompareTag("finalNivel")){
+            ChangeLevel();
+        }        
+    }
+
+    public void ChangeLevel()
+    {
+        SceneManager.LoadScene(nextLevel);
     }
 }
