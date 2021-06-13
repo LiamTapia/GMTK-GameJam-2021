@@ -22,6 +22,7 @@ public class ProjectileLauncher : MonoBehaviour
             projectileInstance = Instantiate(projectile, muzzlePoint.position, muzzlePoint.rotation) as Rigidbody;
             projectileInstance.AddForce(muzzlePoint.forward * 350f);
             timeStamp = Time.time + timeBetweenFire;
+            SoundManagerScript.PlaySound("shooting");
         }
     }
 }
