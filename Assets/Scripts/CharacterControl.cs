@@ -61,7 +61,7 @@ public class CharacterControl : MonoBehaviour
     }
 
     private void OnTriggerEnter(Collider other) {
-        if(other.CompareTag("bullet")){
+        if(other.CompareTag("bullet") || other.CompareTag("ball")){
             if(health>0){
                 health -= 1;
             }
