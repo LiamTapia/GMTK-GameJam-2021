@@ -1,5 +1,18 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
+--- !u!135 &254890149
+SphereCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 554556362930819008}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Radius: 1
+  m_Center: {x: 2.5769622e-15, y: -0.0000000014550937, z: 0.024412394}
 --- !u!1 &3237212590148732512
 GameObject:
   m_ObjectHideFlags: 0
@@ -14,6 +27,8 @@ GameObject:
   - component: {fileID: 3237212590148732525}
   - component: {fileID: 3237212590148732527}
   - component: {fileID: 3237212590148732526}
+  - component: {fileID: 588359749}
+  - component: {fileID: 588359748}
   m_Layer: 0
   m_Name: RingBall
   m_TagString: Untagged
@@ -108,7 +123,7 @@ Rigidbody:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3237212590148732512}
   serializedVersion: 2
-  m_Mass: 7.5
+  m_Mass: 8
   m_Drag: 0
   m_AngularDrag: 0
   m_UseGravity: 1
@@ -128,7 +143,7 @@ CharacterJoint:
   m_Anchor: {x: 0, y: 0.5, z: 0}
   m_Axis: {x: 1, y: 0, z: 0}
   m_AutoConfigureConnectedAnchor: 1
-  m_ConnectedAnchor: {x: 0, y: 4.75, z: 0}
+  m_ConnectedAnchor: {x: 0, y: -0.22900009, z: 0}
   serializedVersion: 2
   m_SwingAxis: {x: 0, y: 1, z: 0}
   m_TwistLimitSpring:
@@ -162,6 +177,31 @@ CharacterJoint:
   m_EnablePreprocessing: 1
   m_MassScale: 1
   m_ConnectedMassScale: 1
+--- !u!135 &588359749
+SphereCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3237212590148732512}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Radius: 0.5
+  m_Center: {x: 0, y: 0, z: 0}
+--- !u!114 &588359748
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3237212590148732512}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 80c14624296b3e648a1a4ada5ab7c089, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &3237212591039126797
 GameObject:
   m_ObjectHideFlags: 0
@@ -325,6 +365,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 986a1d08f284e53459e143f500ed9569, type: 3}
+--- !u!1 &554556362930819008 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 919132149155446097, guid: 986a1d08f284e53459e143f500ed9569, type: 3}
+  m_PrefabInstance: {fileID: 825082059723747985}
+  m_PrefabAsset: {fileID: 0}
 --- !u!4 &935058491647513978 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: 986a1d08f284e53459e143f500ed9569, type: 3}

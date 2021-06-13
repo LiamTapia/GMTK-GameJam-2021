@@ -43,8 +43,6 @@ public class CharacterControl : MonoBehaviour
                     animator.SetBool("isRunning", false);
                 }
                 
-                //if(Input.GetButton("Jump"))
-                //    moveDirection.y = jumpSpeed;
             }
             
             moveDirection.y -= gravity * Time.deltaTime;
