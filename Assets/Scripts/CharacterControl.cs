@@ -13,13 +13,15 @@ public class CharacterControl : MonoBehaviour
     private Vector3 moveDirection = Vector3.zero;
     private Animator animator;
     private bool enabled;
-
+    private int health = 1;
+    private Transform position;
 
     // Start is called before the first frame update
     void Awake()
     {
         animator = GetComponentInChildren<Animator>();
         enabled = true;
+        position = GetComponent<Transform>();
     }
 
     // Update is called once per frame
@@ -48,9 +50,22 @@ public class CharacterControl : MonoBehaviour
             moveDirection.y -= gravity * Time.deltaTime;
             player.Move(moveDirection * Time.deltaTime);
         }
+
+        if((health == 0) || position.position.y < -20){
+                FindObjectOfType<GameManager>().Restart();
+            }
     }
 
     public void toggleEnabled() {
         enabled = !enabled;
+    }
+
+    private void OnTriggerEnter(Collider other) {
+        if(other.CompareTag("bullet")){
+            if(health>0){
+                health -= 1;
+            }
+        }
+        
     }
 }
